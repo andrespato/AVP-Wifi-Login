@@ -14,11 +14,11 @@ window.fbAsyncInit = function() {
         } else if (response.status === 'not_authorized') {
             console.log('We are not logged in');
             
-            document.getElementById('titulo-login').innerHTML = 'Bem Vindo/a </br> Aliança Vinhos de Portugal';
+            document.getElementById('titulo-login').innerHTML = 'Grupo Bacalhôa Vinhos de Portugal';
         } else {
             console.log('You are not logged into Facebook.');
           
-            document.getElementById('titulo-login').innerHTML = 'Bem Vindo/a </br> Aliança Vinhos de Portugal';
+            document.getElementById('titulo-login').innerHTML = 'Grupo Bacalhôa Vinhos de Portugal';
 			 
         }
     });
@@ -44,12 +44,12 @@ window.fbAsyncInit = function() {
              } else if (response.status === 'not_authorized') {
 				 console.log('We are not logged in');
             
-                document.getElementById('titulo-login').innerHTML = 'Bem Vindo/a </br> Aliança Vinhos de Portugal';
+                document.getElementById('titulo-login').innerHTML = 'Grupo Bacalhôa Vinhos de Portugal';
 				
         } else {
             console.log('You are not logged into Facebook.');
           
-            document.getElementById('titulo-login').innerHTML = 'Bem Vindo/a </br> Aliança Vinhos de Portugal';
+            document.getElementById('titulo-login').innerHTML = 'Grupo Bacalhôa Vinhos de Portugal';
 			 
 		}
         }, {scope: 'public_profile,email'});//,user_hometown,user_birthday'});
@@ -97,7 +97,7 @@ window.fbAsyncInit = function() {
                 if(arg===1){
                     document.getElementById('status').innerHTML = JSON.stringify(response,null,4);
                 } else if(arg === 2){ 
-                    document.getElementById('titulo-login').innerHTML = 'Bem Vindo/a <b>' + response.name + '</b> !<br/> Aliança Vinhos de Portugal';
+                    document.getElementById('titulo-login').innerHTML = 'Bem Vindo/a <b>' + response.name + '</b> !<br/> Grupo Bacalhôa Vinhos de Portugal';
                     document.getElementById('login-options').innerHTML = JSON.stringify(response,null,4);
                     info(response.id);
                     document.getElementById("logout-btn").disabled = false;
@@ -125,14 +125,14 @@ function checkLoginState() {
         } else if (response.status === 'not_authorized') {
         console.log('We are not logged in');
             
-            document.getElementById('titulo-login').innerHTML = 'Bem Vindo/a </br> Aliança Vinhos de Portugal';
+            document.getElementById('titulo-login').innerHTML = 'Grupo Bacalhôa Vinhos de Portugal';
             
             document.getElementById("logout-btn").disabled = true;
             
         } else {
             console.log('You are not logged into Facebook.');
           
-            document.getElementById('titulo-login').innerHTML = 'Bem Vindo/a </br> Aliança Vinhos de Portugal';
+            document.getElementById('titulo-login').innerHTML = 'Grupo Bacalhôa Vinhos de Portugal';
             document.getElementById("logout-btn").disabled = true;
 			
         }
@@ -151,7 +151,7 @@ function emailConn(){
             return 0;
         }
         else {
-            document.getElementById('titulo-login').innerHTML = 'Bem Vindo/a !<br/> Aliança Vinhos de Portugal';
+            document.getElementById('titulo-login').innerHTML = 'Bem Vindo/a !<br/> Grupo Bacalhôa Vinhos de Portugal';
             document.getElementById('login-options').innerHTML = "Entrou com o email -><b> "+email+'</b></br><input type="button" value="Sair" onclick="location.reload();"/>';
            
             $.ajax({
