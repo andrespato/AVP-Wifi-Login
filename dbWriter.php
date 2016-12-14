@@ -26,14 +26,14 @@ else{
 
 $name =  $postArr['response']['name'];
 $gender = $postArr['response']['gender'];
+$profileID = $postArr['response']['id'];
 $hometown = $hometownArr['name'];
 $locale = $postArr['response']['locale'];
 
-var_dump($_POST);
+//var_dump($_POST);
 
-
- $sql = "INSERT INTO bit_wifi_lofin.visitantes (email,date,name,gender,hometown,locale)
-                          VALUES('".$email."',NOW(),'".$name."','".$gender."','".$hometown."','".$locale."');";
+ $sql = "INSERT INTO bit_wifi_lofin.visitantes (email,date,name,gender,hometown,locale,type,profile)
+                          VALUES('".$email."',NOW(),'".$name."','".$gender."','".$hometown."','".$locale."','".$_GET['type']."','".$profileID."');";
           
 echo mysqli_query($conn, $sql) or die(mysqli_error($conn));
 

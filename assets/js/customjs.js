@@ -54,39 +54,7 @@ window.fbAsyncInit = function() {
 		}
         }, {scope: 'public_profile,email'});//,user_hometown,user_birthday'});
     }
-    
-    function info(usr_id){
-        var usr = "/"+usr_id;
-        FB.api(
-            usr,
-            'GET',
-            {fields: 'first_name,last_name,name,id,email,locale,gender,hometown,birthday'},
-            function (response) {
-              if (response && !response.error) {
-                /* handle the result */
-                  
-                  
-                  //(JSON.stringify(response,null,4));
-                  
-                  $.ajax({
-                    type: 'POST',
-                    data: {response},
-                    url: 'dbWriter.php',
-                    //contentType: 'application/json; charset=utf-8',
-                    //dataType: 'json',
-                    success: function(data) {
-                        alert("Sucesso: "+data);
-                    },
-                    error: function (request, status, error) {
-                        alert("Error: "+request.responseText);
-                    }
-                });
 
-              }
-            }
-        );
-    }
-        
     // getting basic user info
     function getInfo(arg) {
 
@@ -109,10 +77,7 @@ window.fbAsyncInit = function() {
     function logout(){
             FB.logout(function(response) {
              // user is now logged out
-			 
                 location.reload();
-				
-				
     });
     }
 	
@@ -152,13 +117,12 @@ function emailConn(){
         }
         else {
             document.getElementById('titulo-login').innerHTML = 'Bem Vindo/a !<br/> Grupo Bacalhôa Vinhos de Portugal';
-            document.getElementById('login-options').innerHTML = "Entrou com o email -><b> "+email+'</b></br><input type="button" value="Sair" onclick="location.reload();"/>';
-           
+            document.getElementById('login-options').innerHTML = "Inserir código enviado para -><b> "+email+'</b></br>Código <input type="text"/></br><input type="button" value="Sair" onclick="location.reload();"/>';
+            
             $.ajax({
                     type: 'POST',
                     data: { email : email},
-                    url: 'dbWriter.php',
-                   // contentType: 'application/x-www-form-urlencoded',
+                    url: 'dbWriter.php?type=email',
                     success: function(data) {
                         alert("Sucesso: "+ data);
                     },
@@ -167,4 +131,37 @@ function emailConn(){
                     }
                 });
         }  
+}
+
+ 
+function info(usr_id){
+    var usr = "/"+usr_id;
+    FB.api(
+        usr,
+        'GET',
+        {fields: 'first_name,last_name,name,id,email,locale,gender,hometown,birthday'},
+        function (response) {
+            if (response && !response.error) {
+            /* handle the result */
+                
+                
+                //(JSON.stringify(response,null,4));
+                
+                $.ajax({
+                type: 'POST',
+                data: {response},
+                url: 'dbWriter.php?type=fb',
+                //contentType: 'application/json; charset=utf-8',
+                //dataType: 'json',
+                success: function(data) {
+                    alert("Sucesso: "+data);
+                },
+                error: function (request, status, error) {
+                    alert("Error: "+request.responseText);
+                }
+            });
+
+            }
+        }
+    );
 }
