@@ -117,7 +117,7 @@ function emailConn(){
         }
         else {
             document.getElementById('titulo-login').innerHTML = 'Bem Vindo/a !<br/> Grupo Bacalhôa Vinhos de Portugal';
-            document.getElementById('login-options').innerHTML = "Inserir código enviado para -><b> "+email+'</b></br>Código <input type="text"/></br><input type="button" value="Sair" onclick="location.reload();"/>';
+            document.getElementById('login-options').innerHTML = '<b>Está a um passo de usar o Wifi grátis ! </b>Inserir número de telemóvel para receber o código de confirmação</b></br></br>Telemóvel <input type="tel" id="telemField" /></br><input type="button" value="Enviar Código" onclick="sendConfCode();"/>';
             
             $.ajax({
                     type: 'POST',
@@ -130,6 +130,17 @@ function emailConn(){
                         alert('Falha ajax -> '+JSON.stringify(data));
                     }
                 });
+            // GERAR CODIGO E ENVIAR AO UTILIZADOR
+//             $.ajax({
+//                    type: 'POST',
+//                    url: 'wifiauth.php',
+//                    success: function(data) {
+//                        alert("Sucesso: "+ data);
+//                    },
+//                    error: function(data){
+//                        alert('Falha ajax -> '+JSON.stringify(data));
+//                    }
+//                });
         }  
 }
 
@@ -164,4 +175,11 @@ function info(usr_id){
             }
         }
     );
+}
+
+
+function sendConfCode(){
+    var numTelem = document.getElementById('telemField').value;
+    alert(numTelem);
+    
 }
