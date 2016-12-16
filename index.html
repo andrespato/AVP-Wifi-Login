@@ -1,56 +1,58 @@
 <!DOCTYPE html>
 <html >
 <head>
-  <meta charset="UTF-8">
-  <title>Social Login Button</title>
-  
-  
-  
-      <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>GBVP Free-Wifi</title>
+    
+    <link rel="stylesheet" href="css/style.css">
+    
 </head>
 
 <body>
     <!-- Javascript -->
-        <script src="assets/js/jquery-1.11.1.min.js"></script>
-        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-        <script src="assets/js/customjs.js"></script>
+    <script src="assets/js/jquery-1.11.1.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/customjs.js"></script>
     <script>
-        jQuery(document).ready(function() {
-            /*
-                Fullscreen background
-            */
-            $.backstretch("1.jpg");
+    jQuery(document).ready(function() {
+        /*
+            Fullscreen background
+        */
+        $.backstretch("1.jpg");
 
-        });
+    });
 
-    </script>
-  <div class="login-box">
-      <h2 id="titulo-login">GRUPO BACALHÔA VINHOS DE PORTUGAL </h2>
-        <div id="login-options">
-			<a href="#" class="social-button" id="facebook-connect" onClick="login();"> <span id="fb-span">Entrar com o Facebook</span></a>
-			<!--<a href="#" class="social-button" id="google-connect" onclick="alert('Esta funcionalidade ainda não está disponivel');"> <span id="ggl-span">Entrar com o Google</span></a>
-			<a href="#" class="social-button" id="twitter-connect" onclick="alert('Esta funcionalidade ainda não está disponivel');"> <span id="tt-span">Entrar com o Twitter</span></a>
-            -->
-            <hr/>
-                <span>Entrar com o email</span></br>
-                <input type="email" id="email-connect" name="email"/>
-                <input type="button" id="emailSubmit" value="Entrar" onclick="emailConn();" />
-            
+</script>
+    <div class="login-box">
+          <h2 id="titulo-login">GRUPO BACALHÔA VINHOS DE PORTUGAL </h2>
+          <div id="login-options">
+                <a href="#" class="social-button" id="facebook-connect" onClick="login();"> <span id="fb-span">Entrar com o Facebook</span></a>
+                <a href="#" class="social-button" id="google-connect" onclick="alert('Esta funcionalidade ainda não está disponivel');"> <span id="ggl-span">Entrar com o Google</span></a>
+                <a href="#" class="social-button" id="twitter-connect" onclick="alert('Esta funcionalidade ainda não está disponivel');"> <span id="tt-span">Entrar com o Twitter</span></a>
+                
+                <hr/>
+                    <span>Entrar com o email</span><br/>
+                    <input type="email" id="email-connect" name="email"/>
+                    <input type="button" class="btn btn-primary" id="emailSubmit" value="Entrar" onclick="emailConn();" />
+
         </div>
-    <br/>
-    <div id="fbLike" 
-           class="fb-like" 
-           data-href="https://www.facebook.com/AliancaVinhos" 
-           data-layout="standard" 
-           data-action="like" 
-           data-size="small" 
-           data-show-faces="true" 
-           data-share="true">
+        <br/>
+        <div id="fbLike" 
+               class="fb-like" 
+               data-href="https://www.facebook.com/AliancaVinhos" 
+               data-layout="standard" 
+               data-action="like" 
+               data-size="small" 
+               data-show-faces="true" 
+               data-share="true">
         </div>
-    <input type="button" onclick="logout();" value="Logout" id="logout-btn" disabled="true" />
+        <input type="button" onclick="logout();" value="Logout" id="logout-btn" style="display:none;" />
     </div>
+ 
   
-        <script src="assets/js/jquery.backstretch.min.js"></script>
+<script src="assets/js/jquery.backstretch.min.js"></script>
+
   
 </body>
 </html>
