@@ -19,6 +19,9 @@ $sql = "SELECT * FROM bit_wifi_lofin.visitantes ORDER BY visitantes.date DESC LI
 $result = mysqli_query($conn, $sql) or die(mysqli_error($conn));
 
 while($row = mysqli_fetch_array($result)){
+  if($row['ativo'] == 3) $state = "Validado";
+  else $state = "Não validado";
+
   echo "<tr>
             <td>" . $row['date'] . "</td>
             <td>" . $row['type'] . "</td>
@@ -29,8 +32,10 @@ while($row = mysqli_fetch_array($result)){
             <td>" . $row['hometown'] . "</td>
             <td>" . $row['profile'] . "</td>
             <td>" . $row['hash_code'] . "</td>
+            <td>" . $row['try'] . "</td>
+            <td>" . $state  . "</td>
         </tr>";
 }
 
-$mysqli_close($conn);
+mysqli_close($conn);
  ?>

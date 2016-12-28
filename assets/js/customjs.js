@@ -239,6 +239,7 @@ function checkConfCode(visitanteID){
                     },
                     error: function(data){
                         alert('Falha ajax -> '+JSON.stringify(data));
+                        document.getElementById('login-options').innerHTML = data;
                     }
                 });
     }

@@ -1,12 +1,12 @@
 <?php
-error_reporting(E_ALL); 
+error_reporting(E_ALL);
 // mysql connect ____________________________________________________________
-    $user = 'root'; 
+    $user = 'root';
     $password = 'B954dm1n';
     $db = 'bit_wifi_login';
     $host = '192.168.100.20';
     $port = 3306;
-    
+
     $conn = new mysqli("$host:$port", $user, $password);
     if (!$conn) {
         die("Connection failed: " . mysqli_connect_error());
@@ -30,7 +30,7 @@ $try = $rowdata["try"];
 
 
 $try++;
-if($ativo == 0){ 
+if($ativo == 0){
     $ativo = 1;
 }
 
@@ -59,6 +59,6 @@ else if($try <= 3 && $ativo <= 1){
             echo $try;
         }
     }
-} 
-$mysqli_close($conn);
+}
+mysqli_close($conn);
 ?>
