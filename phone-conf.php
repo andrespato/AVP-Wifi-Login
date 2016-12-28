@@ -1,21 +1,21 @@
 <?php
-error_reporting(E_ALL); 
+error_reporting(E_ALL);
 require 'phpmailer/PHPMailerAutoload.php';
 // mysql connect ____________________________________________________________
-    $user = 'root'; 
+    $user = 'root';
     $password = 'B954dm1n';
     $db = 'bit_wifi_login';
     $host = '192.168.100.20';
     $port = 3306;
-    
+
     $conn = new mysqli("$host:$port", $user, $password);
     if (!$conn) {
         die("Connection failed: " . mysqli_connect_error());
-    }   
+    }
 //______________________________________________________________________________________
 
 // GUARDAR NUMERO DE TELEMOVEL E HASH NA BD
-$random_hash = substr(md5(uniqid(rand(), true)), 16, 16);
+$random_hash = substr(md5(uniqid(rand(), true)), 5, 5);
 $data = explode("-",$_POST["postdata"]);
 $numTelem = $data[1];
 $rowID = $data[0];
@@ -60,7 +60,7 @@ $mail->addAddress($address, 'Visitante');     // Add a recipient
 $mail->isHTML(true);                                  // Set email format to HTML
 
 $mail->Subject = 'GBVP - Wifi Grátis';
-$mail->Body    ="<h1> Código de Confirmação </h1> <b>".$random_hash."</b>";
+$mail->Body    ="<h1> GBVP - Wifi Grátis ! Código de Confirmação :</h1> <b>".$random_hash."</b>";
 
 if(!$mail->send()) {
     echo 'Message could not be sent.';
