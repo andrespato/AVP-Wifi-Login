@@ -1867,8 +1867,8 @@
 	}
 
 		#logo h1 {
-			background: #ff4486;
-			color: #fff;
+			background-color: rgba(35,63,239,0.2);
+			color: black;
 			border-radius: 6px;
 			font-family: 'Oleo Script', serif;
 			font-weight: 400;
@@ -2161,7 +2161,7 @@
 		/* Wrappers */
 
 			#header-wrapper {
-				padding: 3em 0 1em 0;
+				padding: 0em 0 1em 0;
 				text-align: center;
 			}
 
