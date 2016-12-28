@@ -10,7 +10,7 @@
     if (!$conn) {
         die("Connection failed: " . mysqli_connect_error());
     } 
-    //__________________________________________________________________________
+
 //______________________________________________________________________________________
 
 // FIELD CHECK
@@ -29,14 +29,21 @@ $gender = $postArr['response']['gender'];
 $profileID = $postArr['response']['id'];
 $hometown = $hometownArr['name'];
 $locale = $postArr['response']['locale'];
+$ativo = 0;
+
+if(strcmp($_GET['type'],'fb') == 0){
+    $ativo = 3;
+}
 
 //var_dump($_POST);
 
- $sql = "INSERT INTO bit_wifi_lofin.visitantes (email,date,name,gender,hometown,locale,type,profile)
-                          VALUES('".$email."',NOW(),'".$name."','".$gender."','".$hometown."','".$locale."','".$_GET['type']."','".$profileID."');";
-          
-echo mysqli_query($conn, $sql) or die(mysqli_error($conn));
+ $sql = "INSERT INTO bit_wifi_lofin.visitantes (email,date,name,gender,hometown,locale,type,profile,ativo)
+                          VALUES('".$email."',NOW(),'".$name."','".$gender."','".$hometown."','".$locale."','".$_GET['type']."','".$profileID."','".$ativo."');";
+     
 
+$query_exec = mysqli_query($conn, $sql) or die(mysqli_error($conn));
+
+printf (mysqli_insert_id($conn));
 
 mysqli_close($conn);
 ?>
