@@ -3,7 +3,7 @@ error_reporting(E_ALL);
 // mysql connect ____________________________________________________________
     $user = 'root';
     $password = 'B954dm1n';
-    $db = 'bit_wifi_lofin';
+    $db = 'bit_wifi_login';
     $host = '192.168.100.20';
     $port = 3306;
 

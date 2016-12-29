@@ -6,6 +6,8 @@
 
 (function($) {
 
+	
+
 	skel.breakpoints({
 		xlarge: '(max-width: 1680px)',
 		large: '(max-width: 1280px)',
@@ -46,12 +48,12 @@
 		// Off-Canvas Navigation.
 
 			// Navigation Toggle.
-				$(
-					'<div id="navToggle">' +
-						'<a href="#navPanel" class="toggle"></a>' +
-					'</div>'
-				)
-					.appendTo($body);
+				// $(
+				// 	'<div id="navToggle">' +
+				// 		'<a href="#navPanel" class="toggle"></a>' +
+				// 	'</div>'
+				// )
+				// 	.appendTo($body);
 
 			// Navigation Panel.
 				$(
